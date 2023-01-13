@@ -3,9 +3,12 @@ import Todo from './todo';
 
 export type TodoContextType = {
   addTodo: (todo: Todo) => void;
-  removeTodo: () => void;
-  updateTodo: () => void;
+  removeTodo: (todoId: string) => void;
+  updateTodo: (todo: Todo) => void;
   todoItems: Todo[];
+  toggleEditMode: (isEditMode: boolean, todo?: Todo) => void;
+  editMode: boolean;
+  todoInEditMode?: Todo;
 };
 
 export type TodoProviderProps = {
